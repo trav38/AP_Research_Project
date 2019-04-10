@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="theme-color" content="#038db3">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type=" text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/styles/style.css">
+
+</head>
+
+<body>
+    <div class="ui borderless menu">
+        <a class="header item">
+            John's Shop
+        </a>
+        <a class="item" href="./orders"><i class="yellow key icon"></i>Staff</a>
+        <div class="ui right cart item">
+            <i class="large icons">
+                <i class="large link shopping basket icon"></i>
+            </i>
+        </div>
+    </div>
+    <div class="ui container">
+
+        <div class="ui special cards">
+            {{#each snacks}}
+            <div class="card" id="{{this._id}}">
+                <div class="ui fluid blurring large dimmable image">
+                    <div class="ui olive label">${{this.price}}</div>
+                    <div class="ui dimmer">
+                        <div class="content">
+                            <div class="center">
+                                <div class="ui inverted basic add product button" id="{{this._id}}"
+                                    data-product='{"id":"{{this._id}}","name":"{{this.title}}","price":{{this.price}},"img":"{{this.imagePath}}"}'>
+                                    Add Snack
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui message">
+                        <div class="header">
+                            {{this.title}}
+                            <div class="ui star rating" data-rating="3"></div>
+                        </div>
+                        <p></p>
+                    </div>
+                    <img src="{{this.imagePath}}">
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+    </div>
+    <div class="ui small modal form">
+        <div class="header">Order Confirmation</div>
+        <div class="content">
+            <div class="field">
+                <label>ID Number</label>
+                <input type="number" placeholder="1403749" name="id">
+            </div>
+            <div class="field">
+                <label>Name</label>
+                <input type="text" placeholder="name" name="name">
+            </div>
+            <div class="field">
+                <label>Location</label>
+                <input type="text" placeholder="location" name="location">
+            </div>
+            <div class="ui dividing header">Order Summary<div class="ui green total horizontal label"></div>
+            </div>
+            <div class="ui snack list">
+            </div>
+        </div>
+        <div class="actions">
+            <div class="ui negative cancel button">Cancel Order</div>
+            <div class="ui green submit button">Place Order</div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.js"></script>
+    <script src="/scripts/script.js"></script>
+</body>
+</body>
+
+</html>

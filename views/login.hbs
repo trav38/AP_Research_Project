@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="theme-color" content="#038db3">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type=" text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/styles/style.css">
+
+</head>
+
+<body>
+    <div class="ui borderless menu">
+        <a class="header item" href="./">John's Shop</a>
+        <a class="item" href="./orders"><i class="yellow key icon"></i>Staff</a>
+    </div>
+    <div class="ui container">
+        <form class="ui form" method="POST" action="./login">
+            <div class="field">
+                <input type="text" name="username" placeholder="Username">
+            </div>
+            <div class="field">
+                <input type="password" name="password" placeholder="**********">
+            </div>
+            <div class="ui submit button">Login</div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.js"></script>
+    <script>
+        $(function () {
+            $('.ui.form').form({
+                fields: {
+                    username: {
+                        identifier: 'username',
+                        rules: [{
+                            type: 'empty',
+                            prompt: 'Please your username'
+                        }]
+                    },
+                    password: {
+                        identifier: 'password',
+                        rules: [{
+                            type: 'empty',
+                            prompt: 'Please enter your password'
+                        }]
+                    }
+                },
+                onSuccess: function (event, fields) {
+                    console.log("Successful Form Submission");
+                    $('.submit.button').addClass("loading");
+
+                    return true;
+                },
+                onFailure: function (event, fields) {
+                    console.log("Unsuccessful Form Submission");
+                    return false;
+                }
+            });
+        });
+    </script>
+</body>
+</body>
+
+</html>

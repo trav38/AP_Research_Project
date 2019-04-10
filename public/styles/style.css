@@ -1,0 +1,104 @@
+html body {
+    background-color: #f5f5f6;
+    font-family: 'themify', 'Roboto', lato, Helvetica, Arial, sans-serif;
+    height: 100%;
+    width: 100%;
+}
+
+
+.container {
+    margin-top: 12px;
+}
+
+.errorMsg {
+    padding-top: 25% !important;
+}
+
+.hide {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.ui.message .item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.shipping.message {
+    padding: 0em;
+}
+
+.basic.tab {
+    padding-top: 2em;
+}
+
+.tab.segment {
+    padding-top: 1em;
+    padding-left: 0em;
+}
+
+.ui.accordion .title.disabled,
+.ui.accordion .title.disabled:hover {
+    cursor: default !important;
+    background-color: transparent !important;
+    color: rgba(0, 0, 0, 0.4) !important;
+    pointer-events: none;
+    opacity: 0.3 !important;
+    background-image: none !important;
+    box-shadow: none !important;
+}
+
+.card .ui.label {
+    position: absolute;
+    border-radius: 0rem;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 0.9;
+}
+
+.card .ui.message {
+    position: absolute;
+    z-index: 2;
+    opacity: 0.9;
+    bottom: 0;
+    margin-bottom: 0px;
+    border-radius: 0rem;
+    width: 100%;
+}
+
+textarea {
+    resize: none;
+}
+
+.sidebar.vertical.menu .message {
+    border-radius: 0rem;
+}
+
+.sidebar.vertical.menu .olive.message {
+    border-radius: 0rem;
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+.sidebar.vertical.menu .item {
+    border-radius: 0rem;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding: 0em;
+}
+
+.sidebar.vertical.menu .black.message {
+    border-radius: 0rem;
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+.view.cart.button {
+    border-radius: 0rem;
+}
