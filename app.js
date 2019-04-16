@@ -7,7 +7,7 @@ const app = express();
 const db = require('./modules/db');
 const ObjectID = require('mongodb').ObjectID; //Mongo db object id, ideads are stored in this format and require objectid for parsing
 const path = require('path');
-
+const factory =  require('./classes/Factory');
 app.use(express.static('./public'));
 
 // Parse JSON bodies (as sent by API clients)
@@ -28,6 +28,13 @@ app.set('view engine', 'hbs');
 app.get('/add', (req, res) => {
     res.send("db");
 });
+app.get('/factory/:name', (req, res)=>{
+   var createFactory = factory.objectFactory;
+
+    var snackObject = createFactory().snack(req.params.name, 20, 1);
+    console.log("snackObject: " + JSON.stringify(snackObject));
+    res.send(JSON.stringify(snackObject));
+})
 app.get('/update', (req, res) => {
     db.conn("store", "snacks").then((db) => {
 
